@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Colores principales -->
+    <color name="primary">#8C4A3C</color> <!-- Color principal (rojo-terroso) -->
+    <color name="primary_dark">#5A2C21</color> <!-- Tonalidad más oscura del color principal -->
+    <color name="accent">#FF7043</color> <!-- Color de acento (naranja suave) -->
+
+    <!-- Colores de texto -->
+    <color name="text_primary">#212121</color> <!-- Texto principal (gris oscuro) -->
+    <color name="text_secondary">#757575</color> <!-- Texto secundario (gris medio) -->
+    <color name="text_white">#FFFFFF</color> <!-- Texto blanco (para fondos oscuros) -->
+
+    <!-- Fondos -->
+    <color name="background">#F1E6D6</color> <!-- Fondo principal (color claro, beige) -->
+    <color name="background_card">#FFFFFF</color> <!-- Fondo de tarjetas o elementos flotantes (blanco) -->
+    <color name="background_dark">#3E2723</color> <!-- Fondo oscuro para encabezados o secciones (madera oscura) -->
+
+    <!-- Colores de botones -->
+    <color name="button_background">#8C4A3C</color> <!-- Fondo de botones principales (rojo-terroso) -->
+    <color name="button_text">#FFFFFF</color> <!-- Texto de botones (blanco) -->
+    <color name="button_disabled">#BDBDBD</color> <!-- Color de botones deshabilitados (gris claro) -->
+
+    <!-- Colores de enlace/acción -->
+    <color name="link">#FF7043</color> <!-- Color para enlaces o acciones importantes (naranja suave) -->
+
+    <!-- Colores de iconos -->
+    <color name="icon_default">#212121</color> <!-- Color por defecto de los iconos (gris oscuro) -->
+    <color name="icon_active">#FF7043</color> <!-- Color de iconos activos (naranja suave) -->
 </resources>
