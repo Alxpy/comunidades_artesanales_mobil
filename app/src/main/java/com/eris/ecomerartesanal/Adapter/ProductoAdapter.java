@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.eris.ecomerartesanal.R;
@@ -23,7 +24,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
     }
 
     @Override
-    public ProductoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ProductoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_producto, parent, false);
         return new ProductoViewHolder(itemView);
