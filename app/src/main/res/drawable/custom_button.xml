@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- Estado presionado -->
     <item android:state_pressed="true">
         <shape>
             <gradient
                 android:startColor="#D32F2F"
-            android:centerColor="#7C0B0B"
-            android:endColor="#2E0303"
-            android:angle="45"
-            android:type="linear" />
+                android:centerColor="#7C0B0B"
+                android:endColor="#2E0303"
+                android:angle="45"
+                android:type="linear" />
             <corners android:radius="25dp" />
         </shape>
     </item>
 
-    <!-- Estado habilitado -->
-    <item android:state_enabled="true">
+    <item>
         <shape>
             <gradient
                 android:startColor="#F44336"
-            android:centerColor="#D32F2F"
-            android:endColor="#8B1A1A"
-            android:angle="45"
-            android:type="linear" />
+                android:centerColor="#D32F2F"
+                android:endColor="#8B1A1A"
+                android:angle="45"
+                android:type="linear" />
             <corners android:radius="25dp" />
         </shape>
     </item>
 </selector>
+
+
 

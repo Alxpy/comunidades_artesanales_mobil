@@ -56,18 +56,17 @@
         android:inputType="textPassword" />
 
     <!-- Botón de inicio de sesión -->
-
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/passwordEditText"
-        android:layout_marginTop="23dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="485dp"
         android:background="@drawable/custom_button"
+        android:gravity="center"
         android:text="Iniciar Sesión"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
-
     <!-- Enlace para registrarse -->
     <TextView
         android:id="@+id/registro"
