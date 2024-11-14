@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ackground_gradient"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="205dp"
+            android:layout_height="137dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="Logo de la aplicación"
+            android:scaleType="centerInside"
+            android:src="@drawable/logo1" />
+        <!-- Título de la pantalla de registro -->
+        <TextView
+            android:id="@+id/tv_register_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro de Usuario"
+            android:layout_marginTop="10dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#070707"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Campo de Nombre -->
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_text_background"/>
+
+        <!-- Campo de Dirección -->
+        <EditText
+            android:id="@+id/et_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dirección"
+            android:inputType="textPostalAddress"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_text_background"/>
+
+        <!-- Campo de Teléfono -->
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Teléfono"
+            android:inputType="phone"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_text_background"/>
+
+        <!-- Campo de Email -->
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_text_background"/>
+
+        <!-- Campo de Contraseña -->
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/edit_text_background"/>
+
+        <!-- Botón de Registro -->
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrarse"
+            android:textSize="18sp"
+            android:backgroundTint="#DC1212"
+            android:textColor="#FFFFFF"
+            android:padding="12dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ackground_gradient"
+    android:padding="24dp">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="205dp"
+        android:layout_height="137dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="Logo de la aplicación"
+        android:scaleType="centerInside"
+        android:src="@drawable/logo1" />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/loginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Iniciar Sesión"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#333333" />
+
+    <!-- Campo de correo electrónico -->
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/loginTitle"
+        android:layout_marginTop="32dp"
+        android:hint="Correo Electrónico"
+        android:padding="12dp"
+        android:background="@drawable/custom_edittext"
+        android:inputType="textEmailAddress" />
+
+    <!-- Campo de contraseña -->
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/emailEditText"
+        android:layout_marginTop="16dp"
+        android:hint="Contraseña"
+        android:padding="12dp"
+        android:background="@drawable/custom_edittext"
+        android:inputType="textPassword" />
+
+    <!-- Botón de inicio de sesión -->
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/passwordEditText"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/custom_button"
+        android:text="Iniciar Sesión"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <!-- Enlace para registrarse -->
+    <TextView
+        android:id="@+id/registro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginButton"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="¿No tienes una cuenta? Regístrate"
+        android:textColor="#031931"
+        android:textSize="14sp" />
+
+</RelativeLayout>

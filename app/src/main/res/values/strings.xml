@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ecomer artesanal</string>
+    <string name="title_activity_delivery_map">DeliveryMap</string>
 </resources>
