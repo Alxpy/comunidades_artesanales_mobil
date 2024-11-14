@@ -14,14 +14,14 @@ public class ProductoModel {
     private String descripcion;
 
     @SerializedName("precio")
-    private int precio;
+    private double precio;
 
     @SerializedName("descuento")
     private int descuento;
 
     // Aquí almacenamos la imagen como un arreglo de bytes
     @SerializedName("imagen")
-    private byte imagen;
+    private String imagen;
 
     @SerializedName("stock")
     private int stock;
@@ -52,11 +52,11 @@ public class ProductoModel {
         this.descripcion = descripcion;
     }
 
-    public int getPrecio() {
+    public double  getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double  precio) {
         this.precio = precio;
     }
 
@@ -68,11 +68,11 @@ public class ProductoModel {
         this.descuento = descuento;
     }
 
-    public byte getImagen() {
+    public String getImagen() {
         return imagen;
     }
 
-    public void setImagen(byte imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 
