@@ -1,5 +1,6 @@
 package com.eris.ecomerartesanal.Adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,10 @@ import java.util.List;
 public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ProductoViewHolder> {
 
     private List<ProductoModel> productos;
+    private static final String IMAGE_BASE_URL = "http://192.168.1.100:3000/images/";
+
+    // Etiqueta para los Logs
+    private static final String TAG = "ProductoAdapter";
 
     public ProductoAdapter(List<ProductoModel> productos) {
         this.productos = productos;
@@ -35,12 +40,31 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
         holder.productName.setText(producto.getNombre());
         holder.productPrice.setText("$" + producto.getPrecio());
 
-        // Usar Picasso o Glide para cargar la imagen desde los bytes en el arreglo
-        if (producto.getImagen() != 0) {
-            // Aquí convertimos el byte[] en una imagen. Se puede usar un ImageView.setImageBitmap() si se convierte en Bitmap
-            // Picasso o Glide no pueden cargar directamente los byte[] por lo que puedes convertirlos a una imagen Bitmap.
-            // Ejemplo con Picasso:
-            Picasso.get().load(producto.getImagen()).into(holder.productImage); // O usar un Bitmap.
+        // Agregar Log para verificar si la imagen está siendo correctamente procesada
+        String imageName = producto.getImagen();
+        Log.d(TAG, "Procesando imagen para el producto: " + producto.getNombre() + " con nombre de imagen: " + imageName);
+
+        if (imageName != null && !imageName.isEmpty()) {
+            String imageUrl = IMAGE_BASE_URL + imageName;
+            Log.d(TAG, "URL de la imagen: " + imageUrl);
+
+            Picasso.get()
+                    .load(imageUrl)
+                    .placeholder(R.drawable.ic_empty_foreground) // Imagen de reemplazo mientras carga
+                    .error(R.drawable.ic_launcher_foreground) // Imagen de error si la carga falla
+                    .into(holder.productImage, new com.squareup.picasso.Callback() {
+                        @Override
+                        public void onSuccess() {
+                            Log.d(TAG, "La imagen se cargó correctamente.");
+                        }
+
+                        @Override
+                        public void onError(Exception e) {
+                            Log.e(TAG, "Error al cargar la imagen: " + e.getMessage(), e);
+                        }
+                    });
+        } else {
+            Log.w(TAG, "El nombre de la imagen es nulo o vacío para el producto: " + producto.getNombre());
         }
     }
 

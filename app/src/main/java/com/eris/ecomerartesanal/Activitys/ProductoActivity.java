@@ -1,6 +1,7 @@
 package com.eris.ecomerartesanal.Activitys;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,8 @@ public class ProductoActivity extends AppCompatActivity {
     private ProductoAdapter productoAdapter;
     private List<ProductoModel> productoList;
 
+    private static final String TAG = "ProductoAdapter";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,25 +46,29 @@ public class ProductoActivity extends AppCompatActivity {
     private void cargarProductos() {
         ProductoService productoService = Utils.getRetrofitInstance().create(ProductoService.class);
         Call<List<ProductoModel>> call = productoService.getProductos();
-
+        Log.d(TAG, "data: " + call);
         call.enqueue(new Callback<List<ProductoModel>>() {
             @Override
             public void onResponse(Call<List<ProductoModel>> call, Response<List<ProductoModel>> response) {
                 if (response.isSuccessful()) {
                     productoList = response.body();
-
-                    // Configuramos el adaptador con la lista de productos
+                    Log.d(TAG, "Productos cargados: " + productoList);
                     productoAdapter = new ProductoAdapter(productoList);
                     recyclerView.setAdapter(productoAdapter);
                 } else {
+                    // Agrega más detalles del error
+                    Log.e(TAG, "Error en la respuesta: Código de estado: " + response.code() + ", Mensaje: " + response.message());
                     Toast.makeText(ProductoActivity.this, "Error al cargar los productos", Toast.LENGTH_SHORT).show();
                 }
             }
 
+
             @Override
             public void onFailure(Call<List<ProductoModel>> call, Throwable t) {
+                Log.e(TAG, "Error en la conexión: ", t);  // Loguea la excepción para más detalles
                 Toast.makeText(ProductoActivity.this, "Error de conexión", Toast.LENGTH_SHORT).show();
             }
+
         });
     }
 }

@@ -13,7 +13,7 @@ public class Utils {
     public static Retrofit getRetrofitInstance(){
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://192.168.0.16:8000/api/v1/")
+                    .baseUrl("http://192.168.1.100:8000/api/v1/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
