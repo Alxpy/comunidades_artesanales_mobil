@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:padding="16dp">
+
+    <!-- Título de la pantalla -->
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Productos"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/primaryDarkColor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Contenedor de búsqueda -->
+    <LinearLayout
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_text"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_background"
+        android:padding="8dp">
+
+        <!-- Campo de texto para buscar productos -->
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Buscar por nombre, precio o categoría"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:background="@android:color/transparent"
+            android:inputType="text" />
+
+        <!-- Botón de búsqueda -->
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Buscar"
+            android:tint="@color/primaryColor" />
+    </LinearLayout>
+
+    <!-- Contenedor de filtros por precio y categoría -->
+    <LinearLayout
+        android:id="@+id/filters_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_container"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Filtro por categoría -->
+        <Spinner
+            android:id="@+id/category_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/categories"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/spinner_background"
+            android:padding="8dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Filtrar por categoría" />
+
+        <!-- Filtro por precio -->
+        <Spinner
+            android:id="@+id/price_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/price_ranges"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/spinner_background"
+            android:padding="8dp"
+            android:contentDescription="Filtrar por precio" />
+    </LinearLayout>
+
+    <!-- Contenedor de productos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/products_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/filters_container"
+        android:layout_marginTop="12dp"
+        android:padding="8dp" />
+
+</RelativeLayout>
